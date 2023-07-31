@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $task->title)
+@section('title', $task->titles)
 
 @section('content')
     <p>{{ $task->description }}</p>
