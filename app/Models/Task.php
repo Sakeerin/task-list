@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     use HasFactory;
+    
+    // public function getRouteKeyName(){
+    //     return 'task';
+    //     // return 'slug';
+    // }
+
+    protected $fillable = ['title', 'description', 'long_description'];
+    // protected $guarded = ['secret'];
+
+    public function toggleComplete()
+    {
+        $this->completed = !$this->completed;
+        $this->save();
+    }
 }
